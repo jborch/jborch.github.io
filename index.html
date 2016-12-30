@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll down...</title>
+
+    <!-- Styles -->
+    <style>
+        html, body {
+            background-color: #fff;
+            height: 200vh;
+            margin: 0;
+        }
+        #counter {
+            position: fixed;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #ADADAD;
+            font-family: sans-serif;
+            font-size: 80px;
+            line-height: 80px;
+            margin-top: -40px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body id="body">
+<div id="counter">0</div>
+<script>
+    const counter = document.getElementById('counter');
+    window.addEventListener('scroll', function (e) {
+      const height = document.body.scrollHeight,
+            newHeight = height + 100;
+      document.body.style.height = newHeight + 'px';
+      counter.innerHTML = newHeight;
+    });
+</script>
+</body>
+</html>
